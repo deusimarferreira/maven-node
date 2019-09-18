@@ -1,5 +1,7 @@
 FROM maven:3.6.1-jdk-11
 
+COPY nexus.pem /usr/local/openjdk-11/lib/security/nexus.pem
+
 # Node related
 # ------------
 RUN echo "# Installing Nodejs" && \
@@ -10,4 +12,5 @@ RUN echo "# Installing Nodejs" && \
     npm i -g bower yarn && \
     npm cache clear -f && \
     npm i -g n && \
-    n stable
+    n stable && \
+    keytool -importcert -file /usr/local/openjdk-11/lib/security/nexus.pem -alias nexus -cacerts -storepass changeit -keystore /usr/local/openjdk-11/lib/security/cacerts
