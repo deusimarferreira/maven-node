@@ -1,6 +1,6 @@
 FROM maven:3.6.1-jdk-11
 
-COPY nexus.pem /usr/local/openjdk-11/lib/security/nexus.pem
+COPY nexus-cnpq.pem /usr/local/openjdk-11/lib/security/nexus.pem
 
 # Node related
 # ------------
