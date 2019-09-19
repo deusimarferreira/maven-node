@@ -13,4 +13,4 @@ RUN echo "# Installing Nodejs" && \
     npm cache clear -f && \
     npm i -g n && \
     n stable && \
-    keytool -importcert -file /usr/local/openjdk-11/lib/security/nexus.pem -alias nexus -storepass changeit -keystore /usr/local/openjdk-11/lib/security/cacerts
+    keytool -importcert -file /usr/local/openjdk-11/lib/security/nexus.pem -alias nexus -noprompt -storepass changeit -keystore /usr/local/openjdk-11/lib/security/cacerts
