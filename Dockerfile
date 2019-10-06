@@ -7,7 +7,7 @@ RUN echo "# Installing Nodejs" && \
     apt-get install nodejs build-essential -y && \
     npm set strict-ssl false && \
     npm i -g npm@latest && \
-    npm i -g bower yarn && \
+    npm i -g bower yarn@1.16.0 && \
     npm cache clear -f && \
     npm i -g n && \
     n stable
