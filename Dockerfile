@@ -1,4 +1,4 @@
-FROM maven:3.6.2-jdk-11-slim
+FROM maven:3.6.2-jdk-11
 
 # Node related
 # ------------
