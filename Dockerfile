@@ -11,7 +11,19 @@ RUN echo "# Installing Nodejs" && \
     npm cache clear -f && \
     npm i -g n && \
     n stable
- 
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+
+# 
+# Baixando e instalando Google Chrome
+# Utilizado nos testes de integração para o frontend
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 ENV CHROME_BIN /usr/bin/google-chrome
+
+# 
+# Copia do package.json para realizar o download das 
+# dependencias no momento da geração da imagem maven
+#
+WORKDIR /opt/cnpq/dependecias
+COPY package.json .
+
+RUN yarn
