@@ -26,4 +26,4 @@ ENV CHROME_BIN /usr/bin/google-chrome
 WORKDIR /opt/cnpq/dependecias
 COPY package.json .
 
-RUN yarn
+RUN npm install
