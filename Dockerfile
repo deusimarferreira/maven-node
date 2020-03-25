@@ -23,7 +23,7 @@ ENV CHROME_BIN /usr/bin/google-chrome
 # Copia do package.json para realizar o download das 
 # dependencias no momento da geração da imagem maven
 #
-WORKDIR /opt/cnpq/dependecias
-COPY package.json .
+# WORKDIR /opt/cnpq/dependecias
+# COPY package.json .
 
-RUN npm install
+# RUN npm install
